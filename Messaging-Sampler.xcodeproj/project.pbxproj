@@ -244,6 +244,7 @@
 				TargetAttributes = {
 					39737E721D776F1100E70E5A = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = SLHYE76MHB;
 					};
 					39737E861D776F1100E70E5A = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -575,6 +576,7 @@
 			baseConfigurationReference = 3D6426E30950FBDBC1A60290 /* Pods-Messaging-Sampler.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Messaging-Sampler/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "tv.shinoki.Messaging-Sampler";
@@ -587,6 +589,7 @@
 			baseConfigurationReference = D545EB7C2774BDC1AD8D2C85 /* Pods-Messaging-Sampler.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Messaging-Sampler/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "tv.shinoki.Messaging-Sampler";
