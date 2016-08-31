@@ -6,7 +6,7 @@ target 'Messaging-Sampler' do
   use_frameworks!
 
   # Pods for Messaging-Sampler
-
+  pod 'Firebase/Messaging'
   target 'Messaging-SamplerTests' do
     inherit! :search_paths
     # Pods for testing
