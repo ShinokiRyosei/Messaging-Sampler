@@ -131,13 +131,13 @@
 			isa = PBXGroup;
 			children = (
 				39737E761D776F1100E70E5A /* AppDelegate.swift */,
+				39737EAC1D777AC900E70E5A /* Auth */,
 				39737E781D776F1100E70E5A /* ViewController.swift */,
 				39737E7A1D776F1100E70E5A /* Main.storyboard */,
 				39737E7D1D776F1100E70E5A /* Assets.xcassets */,
 				39737E7F1D776F1100E70E5A /* LaunchScreen.storyboard */,
 				39737EA41D77703D00E70E5A /* GoogleService-Info.plist */,
 				39737E821D776F1100E70E5A /* Info.plist */,
-				39737EAC1D777AC900E70E5A /* Auth */,
 			);
 			path = "Messaging-Sampler";
 			sourceTree = "<group>";

@@ -6,10 +6,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Sign up-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Messaging_Sampler" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="SignupViewController" customModule="Messaging_Sampler" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -57,6 +57,9 @@
                                     <constraint firstAttribute="width" constant="120" id="Aur-tv-Ms4"/>
                                 </constraints>
                                 <state key="normal" title="or Log in"/>
+                                <connections>
+                                    <action selector="didSelectToLogin" destination="BYZ-38-t0r" eventType="touchUpInside" id="CRG-ya-QhE"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ol-bT-Tgf">
                                 <rect key="frame" x="260" y="273" width="80" height="30"/>
@@ -64,6 +67,9 @@
                                     <constraint firstAttribute="width" constant="80" id="Hn8-ac-1SU"/>
                                 </constraints>
                                 <state key="normal" title="Sign up"/>
+                                <connections>
+                                    <action selector="didSelectSignup" destination="BYZ-38-t0r" eventType="touchUpInside" id="JYk-Gi-H9O"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -89,19 +95,22 @@
                             <constraint firstItem="xOE-tQ-qeg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yjl-GT-sYU"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="7C1-cu-Bqe"/>
+                    <navigationItem key="navigationItem" title="Sign up" id="7C1-cu-Bqe"/>
                     <connections>
-                        <segue destination="frS-dg-8V6" kind="show" id="22r-Gl-6E7"/>
+                        <outlet property="emailTextField" destination="RW4-Ei-Cka" id="i3b-UW-9O0"/>
+                        <outlet property="passwordAgainTextField" destination="7pg-zV-ejR" id="0Fi-bC-HuD"/>
+                        <outlet property="passwordTextField" destination="AJH-D1-Nw3" id="sZc-TY-kjy"/>
+                        <segue destination="frS-dg-8V6" kind="show" identifier="toLoginView" id="22r-Gl-6E7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1117" y="429"/>
         </scene>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="Ya5-4t-aDR">
             <objects>
-                <viewController id="frS-dg-8V6" sceneMemberID="viewController">
+                <viewController id="frS-dg-8V6" customClass="LoginViewController" customModule="Messaging_Sampler" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MXm-El-XOL"/>
                         <viewControllerLayoutGuide type="bottom" id="Gj8-4E-dic"/>
@@ -138,6 +147,9 @@
                                     <constraint firstAttribute="width" constant="80" id="Ils-36-WMs"/>
                                 </constraints>
                                 <state key="normal" title="Log in"/>
+                                <connections>
+                                    <action selector="didSelectLogin" destination="frS-dg-8V6" eventType="touchUpInside" id="uC6-jK-HfD"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -162,6 +174,10 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="PLx-hH-lqa" id="pts-td-6d6"/>
+                        <outlet property="passwordTextField" destination="5U6-ca-UcP" id="hHt-ga-LOK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MXF-I4-H2j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
