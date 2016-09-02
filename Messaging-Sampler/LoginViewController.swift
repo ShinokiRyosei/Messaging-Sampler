@@ -31,7 +31,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func didSelectLogin() {
-        AuthUtility.loginWithEmail(email: emailTextField.text, password: passwordTextField.text) { 
+        AuthUtility.loginWithEmail(self, email: emailTextField.text, password: passwordTextField.text) {
             // MARK: code after logged in 
         }
     }

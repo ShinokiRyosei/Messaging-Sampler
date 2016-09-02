@@ -20,21 +20,33 @@ class AuthUtility: NSObject {
                 if error != nil {
                     print(error?.localizedDescription)
                 }else {
-                    handler()
+                    user?.sendEmailVerificationWithCompletion({ (err) in
+                        if err != nil {
+                            print(err?.localizedDescription)
+                        }else {
+                            handler()
+                        }
+                    })
+                    
                 }
             })
         }
     }
     
     // Log in
-    class func loginWithEmail(email emailText: String?, password passwordText: String?, handler: () -> Void) {
+    class func loginWithEmail(target: UIViewController, email emailText: String?, password passwordText: String?, handler: () -> Void) {
         guard let email: String = emailText else { return }
         guard let password: String = passwordText else { return }
         FIRAuth.auth()?.signInWithEmail(email, password: password, completion: { (user, error) in
             if error != nil {
                 print(error?.localizedDescription)
             }else {
-                handler()
+                if user?.emailVerified == true {
+                    handler()
+                }else {
+                    Utility.presentAlert(on: target, title: "Email is not Verified", message: "Please Verify your email.", numberOfActions: 1, actionTitles: ["OK"], actionStyles: [.Default], actionHandlers: [nil])
+                }
+                
             }
         })
     }

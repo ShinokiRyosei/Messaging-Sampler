@@ -135,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				39737E761D776F1100E70E5A /* AppDelegate.swift */,
+				39D101681D7A142C000B61F0 /* Util */,
 				39737EAC1D777AC900E70E5A /* Auth */,
 				39737E781D776F1100E70E5A /* ViewController.swift */,
 				39737E7A1D776F1100E70E5A /* Main.storyboard */,
@@ -142,8 +143,6 @@
 				39737E7F1D776F1100E70E5A /* LaunchScreen.storyboard */,
 				39737EA41D77703D00E70E5A /* GoogleService-Info.plist */,
 				39737E821D776F1100E70E5A /* Info.plist */,
-				39D101641D7A0DE6000B61F0 /* Utility.swift */,
-				39D101661D7A1094000B61F0 /* AuthUtility.swift */,
 			);
 			path = "Messaging-Sampler";
 			sourceTree = "<group>";
@@ -173,6 +172,15 @@
 				39737EAA1D777ABD00E70E5A /* LoginViewController.swift */,
 			);
 			name = Auth;
+			sourceTree = "<group>";
+		};
+		39D101681D7A142C000B61F0 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				39D101641D7A0DE6000B61F0 /* Utility.swift */,
+				39D101661D7A1094000B61F0 /* AuthUtility.swift */,
+			);
+			name = Util;
 			sourceTree = "<group>";
 		};
 		FF217AD0A4001DD5B4A0B3BB /* Pods */ = {

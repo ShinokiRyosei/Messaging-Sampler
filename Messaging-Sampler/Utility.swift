@@ -17,4 +17,13 @@ class Utility: NSObject {
         }
         viewcontroller.presentViewController(alert, animated: true, completion: nil)
     }
+    
+    class func presentAlert(on viewcontroller: UIViewController, title: String, message: String, numberOfActions: Int, actionTitles: [String], actionStyles: [UIAlertActionStyle], actionHandlers: [((UIAlertAction)-> Void)?]) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+        for i in 0 ..< numberOfActions {
+            let action = UIAlertAction(title: actionTitles[i], style: actionStyles[i], handler: actionHandlers[i])
+            alert.addAction(action)
+        }
+        viewcontroller.presentViewController(alert, animated: true, completion: nil)
+    }
 }
