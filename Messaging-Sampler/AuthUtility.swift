@@ -18,11 +18,11 @@ class AuthUtility: NSObject {
         if password == passwordAgain {
             FIRAuth.auth()?.createUserWithEmail(email, password: password, completion: { (user, error) in
                 if error != nil {
-                    print(error?.localizedDescription)
+                    print("create user error...\(error?.localizedDescription)")
                 }else {
                     user?.sendEmailVerificationWithCompletion({ (err) in
                         if err != nil {
-                            print(err?.localizedDescription)
+                            print("email verify error...\(err?.localizedDescription)")
                         }else {
                             handler()
                         }

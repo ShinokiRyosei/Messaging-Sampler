@@ -44,15 +44,16 @@ class SignupViewController: UIViewController {
     @IBAction func didSelectSignup() {
         AuthUtility.signupWithEmail(email: emailTextField.text, password: passwordTextField.text, passwordAgain: passwordAgainTextField.text) { 
             // MARK: code after signed up
+            self.toLoginViewTransition()
         }
     }
     
     @IBAction func didSelectToLogin() {
-        
+        self.toLoginViewTransition()
     }
     
     func toLoginViewTransition()  {
-        self.performSegueWithIdentifier("", sender: nil)
+        self.performSegueWithIdentifier("toLoginView", sender: nil)
     }
     
     func toHomeViewTransition() {
