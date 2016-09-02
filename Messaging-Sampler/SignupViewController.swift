@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class SignupViewController: UIViewController {
     
@@ -27,6 +28,13 @@ class SignupViewController: UIViewController {
         passwordTextField.secureTextEntry = true
         passwordAgainTextField.secureTextEntry = true
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        if FIRAuth.auth()?.currentUser != nil {
+            
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -39,6 +47,10 @@ class SignupViewController: UIViewController {
     
     @IBAction func didSelectToLogin() {
         
+    }
+    
+    func toHomeViewTransition() {
+        self.performSegueWithIdentifier("", sender: nil)
     }
 }
 
