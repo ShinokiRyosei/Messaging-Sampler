@@ -42,17 +42,8 @@ class SignupViewController: UIViewController {
     }
     
     @IBAction func didSelectSignup() {
-        guard let email: String = emailTextField.text else { return }
-        guard let password: String = passwordTextField.text else { return }
-        guard let passwordAgain: String = passwordAgainTextField.text else { return }
-        if password == passwordAgain {
-            FIRAuth.auth()?.createUserWithEmail(email, password: password, completion: { (user, error) in
-                if error != nil {
-                    print(error?.localizedDescription)
-                }else {
-                    
-                }
-            })
+        AuthUtility.signupWithEmail(email: emailTextField.text, password: passwordTextField.text, passwordAgain: passwordAgainTextField.text) { 
+            // MARK: code after signed up
         }
     }
     

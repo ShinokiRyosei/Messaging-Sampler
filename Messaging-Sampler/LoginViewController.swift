@@ -31,15 +31,9 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func didSelectLogin() {
-        guard let email: String = emailTextField.text else { return }
-        guard let password: String = passwordTextField.text else { return }
-        FIRAuth.auth()?.signInWithEmail(email, password: password, completion: { (user, error) in
-            if error != nil {
-                print(error?.localizedDescription)
-            }else {
-                
-            }
-        })
+        AuthUtility.loginWithEmail(email: emailTextField.text, password: passwordTextField.text) { 
+            // MARK: code after logged in 
+        }
     }
     
     func toHomeViewTransition() {
