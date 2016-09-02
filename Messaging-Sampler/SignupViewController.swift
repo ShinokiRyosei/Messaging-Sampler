@@ -42,15 +42,30 @@ class SignupViewController: UIViewController {
     }
     
     @IBAction func didSelectSignup() {
-        
+        guard let email: String = emailTextField.text else { return }
+        guard let password: String = passwordTextField.text else { return }
+        guard let passwordAgain: String = passwordAgainTextField.text else { return }
+        if password == passwordAgain {
+            FIRAuth.auth()?.createUserWithEmail(email, password: password, completion: { (user, error) in
+                if error != nil {
+                    print(error?.localizedDescription)
+                }else {
+                    
+                }
+            })
+        }
     }
     
     @IBAction func didSelectToLogin() {
         
     }
     
-    func toHomeViewTransition() {
+    func toLoginViewTransition()  {
         self.performSegueWithIdentifier("", sender: nil)
+    }
+    
+    func toHomeViewTransition() {
+        
     }
 }
 
