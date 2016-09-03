@@ -29,6 +29,8 @@
 		39DC19EC1D7AD35200A8498A /* avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 39DC19EA1D7AD35200A8498A /* avatar.png */; };
 		39DC19EF1D7ADE6600A8498A /* TalkListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DC19EE1D7ADE6600A8498A /* TalkListViewController.swift */; };
 		39DC19F11D7ADECC00A8498A /* TalkListViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DC19F01D7ADECC00A8498A /* TalkListViewExtension.swift */; };
+		39DC19F71D7ADF5500A8498A /* TalkListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DC19F51D7ADF5500A8498A /* TalkListViewCell.swift */; };
+		39DC19F81D7ADF5500A8498A /* TalkListViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39DC19F61D7ADF5500A8498A /* TalkListViewCell.xib */; };
 		73AF2BFD686DCAC8973C55C2 /* Pods_Messaging_Sampler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8402D45F97B3F16007CC3186 /* Pods_Messaging_Sampler.framework */; };
 		C0B6AFBE541AAD98871676E0 /* Pods_Messaging_SamplerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 945309341BBFE42F658BA368 /* Pods_Messaging_SamplerTests.framework */; };
 /* End PBXBuildFile section */
@@ -78,6 +80,8 @@
 		39DC19EA1D7AD35200A8498A /* avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar.png; sourceTree = "<group>"; };
 		39DC19EE1D7ADE6600A8498A /* TalkListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalkListViewController.swift; sourceTree = "<group>"; };
 		39DC19F01D7ADECC00A8498A /* TalkListViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalkListViewExtension.swift; sourceTree = "<group>"; };
+		39DC19F51D7ADF5500A8498A /* TalkListViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalkListViewCell.swift; sourceTree = "<group>"; };
+		39DC19F61D7ADF5500A8498A /* TalkListViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TalkListViewCell.xib; sourceTree = "<group>"; };
 		3CCDE134484575445B3A4419 /* Pods-Messaging-SamplerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Messaging-SamplerUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Messaging-SamplerUITests/Pods-Messaging-SamplerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		3D6426E30950FBDBC1A60290 /* Pods-Messaging-Sampler.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Messaging-Sampler.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Messaging-Sampler/Pods-Messaging-Sampler.debug.xcconfig"; sourceTree = "<group>"; };
 		46AF36D1CDCECDEEF33BDEB5 /* Pods-Messaging-SamplerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Messaging-SamplerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Messaging-SamplerUITests/Pods-Messaging-SamplerUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -155,18 +159,14 @@
 				39DC19ED1D7AD35700A8498A /* Images */,
 				39737E761D776F1100E70E5A /* AppDelegate.swift */,
 				39D101681D7A142C000B61F0 /* Util */,
-				39737EAC1D777AC900E70E5A /* Auth */,
 				39737E781D776F1100E70E5A /* ViewController.swift */,
 				39737E7A1D776F1100E70E5A /* Main.storyboard */,
 				39737E7D1D776F1100E70E5A /* Assets.xcassets */,
 				39737E7F1D776F1100E70E5A /* LaunchScreen.storyboard */,
 				39737EA41D77703D00E70E5A /* GoogleService-Info.plist */,
 				39737E821D776F1100E70E5A /* Info.plist */,
-				39DC19E11D7A8FAC00A8498A /* HomeView */,
-				39DC19E61D7A90B600A8498A /* HomeCell */,
-				39DC19E71D7AC22C00A8498A /* MessageViewController.swift */,
-				39DC19EE1D7ADE6600A8498A /* TalkListViewController.swift */,
-				39DC19F01D7ADECC00A8498A /* TalkListViewExtension.swift */,
+				39DC19FB1D7ADFD700A8498A /* View */,
+				39DC19FA1D7ADFC000A8498A /* Cell */,
 			);
 			path = "Messaging-Sampler";
 			sourceTree = "<group>";
@@ -232,6 +232,44 @@
 				39DC19EA1D7AD35200A8498A /* avatar.png */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		39DC19F21D7ADF2300A8498A /* TalkListView */ = {
+			isa = PBXGroup;
+			children = (
+				39DC19EE1D7ADE6600A8498A /* TalkListViewController.swift */,
+				39DC19F01D7ADECC00A8498A /* TalkListViewExtension.swift */,
+			);
+			name = TalkListView;
+			sourceTree = "<group>";
+		};
+		39DC19F91D7ADF8300A8498A /* TalkListViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				39DC19F51D7ADF5500A8498A /* TalkListViewCell.swift */,
+				39DC19F61D7ADF5500A8498A /* TalkListViewCell.xib */,
+			);
+			name = TalkListViewCell;
+			sourceTree = "<group>";
+		};
+		39DC19FA1D7ADFC000A8498A /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				39DC19E61D7A90B600A8498A /* HomeCell */,
+				39DC19F91D7ADF8300A8498A /* TalkListViewCell */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		39DC19FB1D7ADFD700A8498A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				39737EAC1D777AC900E70E5A /* Auth */,
+				39DC19E11D7A8FAC00A8498A /* HomeView */,
+				39DC19E71D7AC22C00A8498A /* MessageViewController.swift */,
+				39DC19F21D7ADF2300A8498A /* TalkListView */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		FF217AD0A4001DD5B4A0B3BB /* Pods */ = {
@@ -368,6 +406,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39DC19F81D7ADF5500A8498A /* TalkListViewCell.xib in Resources */,
 				39737E811D776F1100E70E5A /* LaunchScreen.storyboard in Resources */,
 				39DC19EC1D7AD35200A8498A /* avatar.png in Resources */,
 				39737EA51D77703D00E70E5A /* GoogleService-Info.plist in Resources */,
@@ -532,6 +571,7 @@
 				39D101671D7A1094000B61F0 /* AuthUtility.swift in Sources */,
 				39D1016A1D7A1D1A000B61F0 /* HomeViewController.swift in Sources */,
 				39737E771D776F1100E70E5A /* AppDelegate.swift in Sources */,
+				39DC19F71D7ADF5500A8498A /* TalkListViewCell.swift in Sources */,
 				39DC19F11D7ADECC00A8498A /* TalkListViewExtension.swift in Sources */,
 				39DC19E41D7A90AF00A8498A /* HomeViewCell.swift in Sources */,
 			);

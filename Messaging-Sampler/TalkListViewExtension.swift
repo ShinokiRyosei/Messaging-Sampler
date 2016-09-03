@@ -8,4 +8,14 @@
 
 import UIKit
 
-extension TalkListViewController
+extension TalkListViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell: TalkListViewCell = tableView.dequeueReusableCellWithIdentifier("") as! TalkListViewCell
+        
+        return cell
+    }
+}
