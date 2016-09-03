@@ -14,7 +14,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier("")!
+        let cell: HomeViewCell = tableView.dequeueReusableCellWithIdentifier("HomeCell") as! HomeViewCell
         return cell
     }
 }
