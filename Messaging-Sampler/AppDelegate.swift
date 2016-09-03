@@ -52,6 +52,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        FIRInstanceID.instanceID().setAPNSToken(deviceToken, type: FIRInstanceIDAPNSTokenType.Sandbox)
+    }
+    
     func tokenRefreshNotification(notification: NSNotification)  {
         if let refreshedToken: String = FIRInstanceID.instanceID().token() {
             print("Instance ID token: \(refreshedToken)")
