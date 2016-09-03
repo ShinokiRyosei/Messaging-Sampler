@@ -8,6 +8,7 @@ target 'Messaging-Sampler' do
   # Pods for Messaging-Sampler
   pod 'Firebase/Messaging'
   pod 'Firebase/Auth'
+  pod 'JSQMessagesViewController'
   target 'Messaging-SamplerTests' do
     inherit! :search_paths
     # Pods for testing
