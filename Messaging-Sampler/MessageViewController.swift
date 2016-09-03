@@ -65,13 +65,7 @@ class MessageViewController: JSQMessagesViewController {
         }
         return self.incomingAvatar
     }
-//    override func collectionView(collectionView: JSQMessagesCollectionView!, messageBubbleImageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageBubbleImageDataSource! {
-//        let message = self.messages?[indexPath.item]
-//        if message?.senderId == self.senderId {
-//            return self.outgoingBubble
-//        }
-//        return self.incomingBubble
-//    }
+
     override func collectionView(collectionView: JSQMessagesCollectionView!, messageBubbleImageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageBubbleImageDataSource! {
         let message = self.messages?[indexPath.item]
         if message?.senderId == self.senderId {

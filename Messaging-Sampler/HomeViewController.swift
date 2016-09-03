@@ -17,6 +17,8 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         homeTable.delegate = self
         homeTable.dataSource = self
+        
+        homeTable.registerNib(UINib(nibName: "HomeViewCell", bundle: nil), forHeaderFooterViewReuseIdentifier: "HomeCell")
     }
     
     override func viewWillAppear(animated: Bool) {

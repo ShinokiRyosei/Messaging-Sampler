@@ -17,6 +17,8 @@ class TalkListViewController: UIViewController {
 
         talkListTableView.delegate = self
         talkListTableView.dataSource = self
+        
+        talkListTableView.registerNib(UINib(nibName: "TalkListViewCell", bundle: nil), forHeaderFooterViewReuseIdentifier: "TalkListCell")
     }
 
     override func didReceiveMemoryWarning() {

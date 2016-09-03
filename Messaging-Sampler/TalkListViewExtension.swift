@@ -14,7 +14,7 @@ extension TalkListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell: TalkListViewCell = tableView.dequeueReusableCellWithIdentifier("") as! TalkListViewCell
+        let cell: TalkListViewCell = tableView.dequeueReusableCellWithIdentifier("TalkListCell") as! TalkListViewCell
         
         return cell
     }
