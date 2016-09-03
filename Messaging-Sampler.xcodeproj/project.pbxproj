@@ -21,6 +21,7 @@
 		39D101651D7A0DE6000B61F0 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D101641D7A0DE6000B61F0 /* Utility.swift */; };
 		39D101671D7A1094000B61F0 /* AuthUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D101661D7A1094000B61F0 /* AuthUtility.swift */; };
 		39D1016A1D7A1D1A000B61F0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D101691D7A1D1A000B61F0 /* HomeViewController.swift */; };
+		39DC19E01D7A8FA700A8498A /* HomeViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DC19DF1D7A8FA700A8498A /* HomeViewExtension.swift */; };
 		73AF2BFD686DCAC8973C55C2 /* Pods_Messaging_Sampler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8402D45F97B3F16007CC3186 /* Pods_Messaging_Sampler.framework */; };
 		C0B6AFBE541AAD98871676E0 /* Pods_Messaging_SamplerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 945309341BBFE42F658BA368 /* Pods_Messaging_SamplerTests.framework */; };
 /* End PBXBuildFile section */
@@ -62,6 +63,7 @@
 		39D101641D7A0DE6000B61F0 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		39D101661D7A1094000B61F0 /* AuthUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthUtility.swift; sourceTree = "<group>"; };
 		39D101691D7A1D1A000B61F0 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		39DC19DF1D7A8FA700A8498A /* HomeViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewExtension.swift; sourceTree = "<group>"; };
 		3CCDE134484575445B3A4419 /* Pods-Messaging-SamplerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Messaging-SamplerUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Messaging-SamplerUITests/Pods-Messaging-SamplerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		3D6426E30950FBDBC1A60290 /* Pods-Messaging-Sampler.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Messaging-Sampler.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Messaging-Sampler/Pods-Messaging-Sampler.debug.xcconfig"; sourceTree = "<group>"; };
 		46AF36D1CDCECDEEF33BDEB5 /* Pods-Messaging-SamplerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Messaging-SamplerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Messaging-SamplerUITests/Pods-Messaging-SamplerUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -145,7 +147,7 @@
 				39737E7F1D776F1100E70E5A /* LaunchScreen.storyboard */,
 				39737EA41D77703D00E70E5A /* GoogleService-Info.plist */,
 				39737E821D776F1100E70E5A /* Info.plist */,
-				39D101691D7A1D1A000B61F0 /* HomeViewController.swift */,
+				39DC19E11D7A8FAC00A8498A /* HomeView */,
 			);
 			path = "Messaging-Sampler";
 			sourceTree = "<group>";
@@ -184,6 +186,15 @@
 				39D101661D7A1094000B61F0 /* AuthUtility.swift */,
 			);
 			name = Util;
+			sourceTree = "<group>";
+		};
+		39DC19E11D7A8FAC00A8498A /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+				39D101691D7A1D1A000B61F0 /* HomeViewController.swift */,
+				39DC19DF1D7A8FA700A8498A /* HomeViewExtension.swift */,
+			);
+			name = HomeView;
 			sourceTree = "<group>";
 		};
 		FF217AD0A4001DD5B4A0B3BB /* Pods */ = {
@@ -466,6 +477,7 @@
 				39D101651D7A0DE6000B61F0 /* Utility.swift in Sources */,
 				39737EAB1D777ABD00E70E5A /* LoginViewController.swift in Sources */,
 				39737EA91D777AAD00E70E5A /* SignupViewController.swift in Sources */,
+				39DC19E01D7A8FA700A8498A /* HomeViewExtension.swift in Sources */,
 				39737E791D776F1100E70E5A /* ViewController.swift in Sources */,
 				39D101671D7A1094000B61F0 /* AuthUtility.swift in Sources */,
 				39D1016A1D7A1D1A000B61F0 /* HomeViewController.swift in Sources */,

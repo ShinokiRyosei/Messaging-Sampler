@@ -32,7 +32,7 @@ class SignupViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         if FIRAuth.auth()?.currentUser != nil {
-            
+            self.toHomeViewTransition()
         }
     }
 
@@ -57,7 +57,8 @@ class SignupViewController: UIViewController {
     }
     
     func toHomeViewTransition() {
-        
+        let home = self.storyboard?.instantiateViewControllerWithIdentifier("HomeView") as! HomeViewController
+        self.presentViewController(home, animated: false, completion: nil)
     }
 }
 

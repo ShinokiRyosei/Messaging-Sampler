@@ -107,10 +107,10 @@
             </objects>
             <point key="canvasLocation" x="1117" y="429"/>
         </scene>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="C7H-X0-Tf3">
             <objects>
-                <viewController id="GSG-AF-T2a" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeView" id="GSG-AF-T2a" customClass="HomeViewController" customModule="Messaging_Sampler" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zOb-wL-wNu"/>
                         <viewControllerLayoutGuide type="bottom" id="rvM-SM-a2a"/>

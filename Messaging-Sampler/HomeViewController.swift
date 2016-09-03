@@ -9,11 +9,13 @@
 import UIKit
 
 class HomeViewController: UIViewController {
+    
+    @IBOutlet var homeTable: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        homeTable.delegate = self
+        homeTable.dataSource = self
     }
 
     override func didReceiveMemoryWarning() {

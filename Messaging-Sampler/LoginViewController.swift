@@ -33,12 +33,13 @@ class LoginViewController: UIViewController {
     @IBAction func didSelectLogin() {
         AuthUtility.loginWithEmail(self, email: emailTextField.text, password: passwordTextField.text) {
             // MARK: code after logged in 
-            
+            self.toHomeViewTransition()
         }
     }
     
     func toHomeViewTransition() {
-        
+        let home = self.storyboard?.instantiateViewControllerWithIdentifier("HomeView") as! HomeViewController
+        self.presentViewController(home, animated: false, completion: nil)
     }
 }
 
