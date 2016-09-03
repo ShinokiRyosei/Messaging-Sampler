@@ -19,6 +19,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
+        Utility.segueTransition(from: self, segue: "", sender: nil)
     }
 }

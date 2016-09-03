@@ -16,6 +16,8 @@ class SignupViewController: UIViewController {
     @IBOutlet var passwordTextField: UITextField!
     
     @IBOutlet var passwordAgainTextField: UITextField!
+    
+    let segueName: String = "toLoginView"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,17 +45,13 @@ class SignupViewController: UIViewController {
     
     @IBAction func didSelectSignup() {
         AuthUtility.signupWithEmail(email: emailTextField.text, password: passwordTextField.text, passwordAgain: passwordAgainTextField.text) { 
-            // MARK: code after signed up
-            self.toLoginViewTransition()
+            // MARK: the transition to log in view after sign up
+            Utility.segueTransition(from: self, segue: self.segueName, sender: nil)
         }
     }
     
     @IBAction func didSelectToLogin() {
-        self.toLoginViewTransition()
-    }
-    
-    func toLoginViewTransition()  {
-        self.performSegueWithIdentifier("toLoginView", sender: nil)
+        Utility.segueTransition(from: self, segue: segueName, sender: nil)
     }
     
     func toHomeViewTransition() {
