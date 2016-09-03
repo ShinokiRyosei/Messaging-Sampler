@@ -9,6 +9,7 @@
 import UIKit
 
 class Utility: NSObject {
+    
     class func presentActionSheet(on viewcontroller: UIViewController, title: String, message: String, numberOfActions: Int, actionTitles: [String], actionStyles: [UIAlertActionStyle], actionHandlers: [((UIAlertAction)-> Void)?]) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .ActionSheet)
         for i in 0 ..< numberOfActions {
@@ -25,5 +26,9 @@ class Utility: NSObject {
             alert.addAction(action)
         }
         viewcontroller.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    class func segueTransition(from viewcontrller: UIViewController, segue id: String, sender: AnyObject?) {
+        viewcontrller.performSegueWithIdentifier(id, sender: nil)
     }
 }
