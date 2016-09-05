@@ -17,7 +17,7 @@ class SignupViewController: UIViewController {
     
     @IBOutlet var passwordAgainTextField: UITextField!
     
-    let segueName: String = "toLoginView"
+    private let segueName: String = "toLoginView"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +34,7 @@ class SignupViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         if FIRAuth.auth()?.currentUser != nil {
-            self.toHomeViewTransition()
+            Transition().toHomeViewTransition(on: self)
         }
     }
 
@@ -52,11 +52,6 @@ class SignupViewController: UIViewController {
     
     @IBAction func didSelectToLogin() {
         Utility.segueTransition(from: self, segue: segueName, sender: nil)
-    }
-    
-    func toHomeViewTransition() {
-        let home = self.storyboard?.instantiateViewControllerWithIdentifier("HomeView") as! HomeViewController
-        self.presentViewController(home, animated: false, completion: nil)
     }
 }
 
