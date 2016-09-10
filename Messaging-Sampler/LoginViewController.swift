@@ -22,7 +22,7 @@ class LoginViewController: UIViewController {
         emailTextField.delegate = self
         passwordTextField.delegate = self
         
-        passwordTextField.secureTextEntry = true
+        passwordTextField.isSecureTextEntry = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,7 +40,7 @@ class LoginViewController: UIViewController {
 
 
 extension LoginViewController: UITextFieldDelegate {
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }

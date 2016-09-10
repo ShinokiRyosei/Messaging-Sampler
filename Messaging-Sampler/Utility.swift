@@ -11,24 +11,24 @@ import UIKit
 class Utility: NSObject {
     
     class func presentActionSheet(on viewcontroller: UIViewController, title: String, message: String, numberOfActions: Int, actionTitles: [String], actionStyles: [UIAlertActionStyle], actionHandlers: [((UIAlertAction)-> Void)?]) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .ActionSheet)
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
         for i in 0 ..< numberOfActions {
             let action = UIAlertAction(title: actionTitles[i], style: actionStyles[i], handler: actionHandlers[i])
             alert.addAction(action)
         }
-        viewcontroller.presentViewController(alert, animated: true, completion: nil)
+        viewcontroller.present(alert, animated: true, completion: nil)
     }
     
     class func presentAlert(on viewcontroller: UIViewController, title: String, message: String, numberOfActions: Int, actionTitles: [String], actionStyles: [UIAlertActionStyle], actionHandlers: [((UIAlertAction)-> Void)?]) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         for i in 0 ..< numberOfActions {
             let action = UIAlertAction(title: actionTitles[i], style: actionStyles[i], handler: actionHandlers[i])
             alert.addAction(action)
         }
-        viewcontroller.presentViewController(alert, animated: true, completion: nil)
+        viewcontroller.present(alert, animated: true, completion: nil)
     }
     
     class func segueTransition(from viewcontrller: UIViewController, segue id: String, sender: AnyObject?) {
-        viewcontrller.performSegueWithIdentifier(id, sender: nil)
+        viewcontrller.performSegue(withIdentifier: id, sender: nil)
     }
 }

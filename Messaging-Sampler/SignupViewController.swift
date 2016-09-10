@@ -17,7 +17,7 @@ class SignupViewController: UIViewController {
     
     @IBOutlet var passwordAgainTextField: UITextField!
     
-    private let segueName: String = "toLoginView"
+    fileprivate let segueName: String = "toLoginView"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,11 +27,11 @@ class SignupViewController: UIViewController {
         passwordTextField.delegate = self
         passwordAgainTextField.delegate = self
         
-        passwordTextField.secureTextEntry = true
-        passwordAgainTextField.secureTextEntry = true
+        passwordTextField.isSecureTextEntry = true
+        passwordAgainTextField.isSecureTextEntry = true
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if FIRAuth.auth()?.currentUser != nil {
             Transition().toHomeViewTransition(on: self)
@@ -56,7 +56,7 @@ class SignupViewController: UIViewController {
 }
 
 extension SignupViewController: UITextFieldDelegate {
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
