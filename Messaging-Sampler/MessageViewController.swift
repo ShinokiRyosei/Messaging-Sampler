@@ -44,10 +44,9 @@ class MessageViewController: JSQMessagesViewController {
     override func didPressSend(_ button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: Date!) {
         let message = JSQMessage(senderId: senderId, displayName: senderDisplayName, text: text)
         self.messages?.append(message!)
-        
+        let data: [String: Any] = ["date": date, "message": text]
+        FIRMessaging.messaging().sendMessage(data, to: "HdhDqiQSK2X5l2dE10Yc1KLsode2@gcm.googleapis.com", withMessageID: FIRInstanceID.instanceID().token()!, timeToLive: 100)
         self.finishReceivingMessage(animated: true)
-        
-        self.receiveAutoMessage()
     }
     
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, messageDataForItemAt indexPath: IndexPath!) -> JSQMessageData! {

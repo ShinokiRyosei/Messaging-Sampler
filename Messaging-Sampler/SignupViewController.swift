@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import FirebaseAuth
+import Firebase
 
 class SignupViewController: UIViewController {
     
@@ -46,7 +46,6 @@ class SignupViewController: UIViewController {
     @IBAction func didSelectSignup() {
         AuthUtility.signupWithEmail(email: emailTextField.text, password: passwordTextField.text, passwordAgain: passwordAgainTextField.text) { 
             // MARK: the transition to log in view after sign up
-            
             Utility.segueTransition(from: self, segue: self.segueName, sender: nil)
         }
     }
