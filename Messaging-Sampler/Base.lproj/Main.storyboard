@@ -64,26 +64,41 @@
                                     <action selector="didSelectSignup" destination="BYZ-38-t0r" eventType="touchUpInside" id="JYk-Gi-H9O"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ICf-mM-abV">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zeU-oP-9LY">
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="zeU-oP-9LY" secondAttribute="leading" id="01o-yK-6VO"/>
                             <constraint firstAttribute="trailingMargin" secondItem="7pg-zV-ejR" secondAttribute="trailing" id="1XA-UI-v3q"/>
                             <constraint firstItem="a9k-ks-kEs" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="4mR-vb-v4P"/>
                             <constraint firstAttribute="leadingMargin" secondItem="AJH-D1-Nw3" secondAttribute="leading" id="AEX-tU-kuV"/>
                             <constraint firstAttribute="leadingMargin" secondItem="Y1x-i5-c9T" secondAttribute="leading" id="DBM-LJ-P4Q"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="zeU-oP-9LY" secondAttribute="trailing" id="HcM-9r-dJE"/>
                             <constraint firstAttribute="trailingMargin" secondItem="RW4-Ei-Cka" secondAttribute="trailing" id="L6v-1c-ap5"/>
                             <constraint firstItem="7pg-zV-ejR" firstAttribute="top" secondItem="HdC-P2-7Tt" secondAttribute="bottom" constant="8" id="Lc4-1w-5Qa"/>
                             <constraint firstItem="HdC-P2-7Tt" firstAttribute="top" secondItem="AJH-D1-Nw3" secondAttribute="bottom" constant="8" id="P9T-MW-3as"/>
-                            <constraint firstItem="7ol-bT-Tgf" firstAttribute="top" secondItem="7pg-zV-ejR" secondAttribute="bottom" constant="8" id="Q4x-0B-4XZ"/>
                             <constraint firstAttribute="leadingMargin" secondItem="HdC-P2-7Tt" secondAttribute="leading" id="Tc7-Xc-vyC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="AJH-D1-Nw3" secondAttribute="trailing" id="WV5-tz-udA"/>
+                            <constraint firstItem="zeU-oP-9LY" firstAttribute="top" secondItem="ICf-mM-abV" secondAttribute="bottom" constant="13" id="aIp-Ds-Gt8"/>
                             <constraint firstItem="RW4-Ei-Cka" firstAttribute="top" secondItem="a9k-ks-kEs" secondAttribute="bottom" constant="8" id="bqp-A5-mNB"/>
                             <constraint firstAttribute="leadingMargin" secondItem="a9k-ks-kEs" secondAttribute="leading" id="ceA-Qc-5K9"/>
                             <constraint firstAttribute="leadingMargin" secondItem="RW4-Ei-Cka" secondAttribute="leading" id="dss-jW-h59"/>
+                            <constraint firstItem="ICf-mM-abV" firstAttribute="top" secondItem="7pg-zV-ejR" secondAttribute="bottom" constant="8" id="ena-mb-xaN"/>
                             <constraint firstAttribute="leadingMargin" secondItem="7pg-zV-ejR" secondAttribute="leading" id="foq-tw-4Ql"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="ICf-mM-abV" secondAttribute="leading" id="gWh-ox-QoU"/>
                             <constraint firstItem="Y1x-i5-c9T" firstAttribute="top" secondItem="RW4-Ei-Cka" secondAttribute="bottom" constant="8" id="hd2-sm-86U"/>
                             <constraint firstItem="AJH-D1-Nw3" firstAttribute="top" secondItem="Y1x-i5-c9T" secondAttribute="bottom" constant="8" id="oRd-OH-Puo"/>
                             <constraint firstItem="xOE-tQ-qeg" firstAttribute="top" secondItem="7ol-bT-Tgf" secondAttribute="bottom" constant="8" id="pgF-l7-dvg"/>
+                            <constraint firstItem="7ol-bT-Tgf" firstAttribute="top" secondItem="zeU-oP-9LY" secondAttribute="bottom" constant="8.5" id="pm4-kh-e7h"/>
                             <constraint firstItem="7ol-bT-Tgf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tzZ-Mj-XY9"/>
                             <constraint firstItem="xOE-tQ-qeg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yjl-GT-sYU"/>
                         </constraints>
@@ -93,12 +108,13 @@
                         <outlet property="emailTextField" destination="RW4-Ei-Cka" id="i3b-UW-9O0"/>
                         <outlet property="passwordAgainTextField" destination="7pg-zV-ejR" id="0Fi-bC-HuD"/>
                         <outlet property="passwordTextField" destination="AJH-D1-Nw3" id="sZc-TY-kjy"/>
+                        <outlet property="usernameTextField" destination="zeU-oP-9LY" id="GVJ-B6-bDD"/>
                         <segue destination="frS-dg-8V6" kind="show" identifier="toLoginView" id="22r-Gl-6E7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1117" y="429"/>
+            <point key="canvasLocation" x="1116" y="428.63568215892059"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="C7H-X0-Tf3">

@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseDatabase
 
 class SignupViewController: UIViewController {
     
@@ -16,6 +17,8 @@ class SignupViewController: UIViewController {
     @IBOutlet var passwordTextField: UITextField!
     
     @IBOutlet var passwordAgainTextField: UITextField!
+    
+    @IBOutlet var usernameTextField: UITextField!
     
     fileprivate let segueName: String = "toLoginView"
 
@@ -26,6 +29,7 @@ class SignupViewController: UIViewController {
         emailTextField.delegate = self
         passwordTextField.delegate = self
         passwordAgainTextField.delegate = self
+        usernameTextField.delegate = self
         
         passwordTextField.isSecureTextEntry = true
         passwordAgainTextField.isSecureTextEntry = true
@@ -34,6 +38,7 @@ class SignupViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if FIRAuth.auth()?.currentUser != nil && FIRAuth.auth()?.currentUser?.isEmailVerified == true {
+            print("user is already logged in")
             Transition().toHomeViewTransition(on: self)
         }
     }
@@ -44,8 +49,9 @@ class SignupViewController: UIViewController {
     }
     
     @IBAction func didSelectSignup() {
-        AuthUtility.signupWithEmail(email: emailTextField.text, password: passwordTextField.text, passwordAgain: passwordAgainTextField.text) { 
+        AuthUtility.signupWithEmail(email: emailTextField.text, password: passwordTextField.text, passwordAgain: passwordAgainTextField.text, username: usernameTextField.text) {
             // MARK: the transition to log in view after sign up
+            
             Utility.segueTransition(from: self, segue: self.segueName, sender: nil)
         }
     }
