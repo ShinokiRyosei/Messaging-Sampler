@@ -14,7 +14,7 @@ protocol HomeViewTransition {
 
 struct Transition: HomeViewTransition {
     func toHomeViewTransition(on viewcontroller: UIViewController) {
-        let home = viewcontroller.storyboard?.instantiateViewController(withIdentifier: "HomeView") as! HomeViewController
-        viewcontroller.present(home, animated: false, completion: nil)
+        let home = viewcontroller.storyboard?.instantiateViewController(withIdentifier: "HomeView")
+        viewcontroller.present(home!, animated: false, completion: nil)
     }
 }

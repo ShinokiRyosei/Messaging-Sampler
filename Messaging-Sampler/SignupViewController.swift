@@ -33,7 +33,7 @@ class SignupViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if FIRAuth.auth()?.currentUser != nil {
+        if FIRAuth.auth()?.currentUser != nil && FIRAuth.auth()?.currentUser?.isEmailVerified == true {
             Transition().toHomeViewTransition(on: self)
         }
     }
@@ -46,6 +46,7 @@ class SignupViewController: UIViewController {
     @IBAction func didSelectSignup() {
         AuthUtility.signupWithEmail(email: emailTextField.text, password: passwordTextField.text, passwordAgain: passwordAgainTextField.text) { 
             // MARK: the transition to log in view after sign up
+            
             Utility.segueTransition(from: self, segue: self.segueName, sender: nil)
         }
     }
