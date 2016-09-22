@@ -32,6 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         }
         
         FIRApp.configure()
+        FIRDatabase.database().persistenceEnabled = true
         
         //        NotificationCenter.defaultCenter.addObserver(self, selector: #selector(tokenRefreshNotification)), name: kFIRInstanceIDTokenRefreshNotification, object: nil)
         

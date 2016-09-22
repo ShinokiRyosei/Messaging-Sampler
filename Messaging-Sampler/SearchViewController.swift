@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class SearchViewController: UIViewController {
     
@@ -38,11 +39,21 @@ class SearchViewController: UIViewController {
             return searchController
         }()
     }
+    
+    fileprivate func queryUserName(on key: String) {
+        let ref: FIRDatabaseReference = FIRDatabase.database().reference().child("user")
+        ref.queryOrdered(byChild: "username").queryEqual(toValue: key).observeSingleEvent(of: .value, with: { (snapShot) in
+            print(snapShot)
+        }) { (error) in
+            print(error)
+        }
+    }
 }
 
 extension SearchViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        
+        guard let text: String = searchController.searchBar.text else { return }
+        self.queryUserName(on: text)
     }
 }
 
