@@ -9,10 +9,54 @@
 import UIKit
 
 class SearchViewController: UIViewController {
-
+    
+    fileprivate var searchController: UISearchController!
+    
+    @IBOutlet var table: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.configureSearchController()
+    }
+    
+    private func configureTable() {
+        table.delegate = self
+        table.dataSource = self
+        table.register(UINib(nibName: "SearchViewCell", bundle: nil), forCellReuseIdentifier: "SearchCell")
+        table.tableFooterView = UIView()
+    }
+    
+    private func configureSearchController() {
+        searchController = {
+            let searchController = UISearchController(searchResultsController: nil)
+            searchController.searchResultsUpdater = self
+            searchController.hidesNavigationBarDuringPresentation = false
+            searchController.dimsBackgroundDuringPresentation = false
+            searchController.searchBar.searchBarStyle = .prominent
+            searchController.searchBar.sizeToFit()
+            table.tableHeaderView = searchController.searchBar
+            return searchController
+        }()
+    }
+}
 
-        // Do any additional setup after loading the view.
+extension SearchViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        
+    }
+}
+
+extension SearchViewController: UITableViewDelegate {
+    
+}
+
+extension SearchViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SearchCell", for: indexPath) as! SearchViewCell
+        return cell
     }
 }
