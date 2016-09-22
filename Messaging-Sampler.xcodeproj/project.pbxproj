@@ -24,6 +24,7 @@
 		39C1FAB61D94223A00587281 /* SearchViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39C1FAB41D94223A00587281 /* SearchViewCell.xib */; };
 		39C1FAB91D942B6300587281 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C1FAB81D942B6300587281 /* Message.swift */; };
 		39C1FABC1D94356200587281 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C1FABB1D94356200587281 /* Search.swift */; };
+		39C1FABE1D9446AF00587281 /* SearchViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C1FABD1D9446AF00587281 /* SearchViewExtension.swift */; };
 		39D101651D7A0DE6000B61F0 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D101641D7A0DE6000B61F0 /* Utility.swift */; };
 		39D101671D7A1094000B61F0 /* AuthUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D101661D7A1094000B61F0 /* AuthUtility.swift */; };
 		39D1016A1D7A1D1A000B61F0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D101691D7A1D1A000B61F0 /* HomeViewController.swift */; };
@@ -77,6 +78,7 @@
 		39C1FAB41D94223A00587281 /* SearchViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchViewCell.xib; sourceTree = "<group>"; };
 		39C1FAB81D942B6300587281 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		39C1FABB1D94356200587281 /* Search.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
+		39C1FABD1D9446AF00587281 /* SearchViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewExtension.swift; sourceTree = "<group>"; };
 		39D101641D7A0DE6000B61F0 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		39D101661D7A1094000B61F0 /* AuthUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthUtility.swift; sourceTree = "<group>"; };
 		39D101691D7A1D1A000B61F0 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -221,6 +223,15 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		39C1FABF1D9446B700587281 /* SearchView */ = {
+			isa = PBXGroup;
+			children = (
+				39C1FAB11D941D0600587281 /* SearchViewController.swift */,
+				39C1FABD1D9446AF00587281 /* SearchViewExtension.swift */,
+			);
+			name = SearchView;
+			sourceTree = "<group>";
+		};
 		39D101681D7A142C000B61F0 /* Util */ = {
 			isa = PBXGroup;
 			children = (
@@ -270,7 +281,7 @@
 		39DC19FB1D7ADFD700A8498A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				39C1FAB11D941D0600587281 /* SearchViewController.swift */,
+				39C1FABF1D9446B700587281 /* SearchView */,
 				39737EAC1D777AC900E70E5A /* Auth */,
 				39DC19E11D7A8FAC00A8498A /* HomeView */,
 				39DC19E71D7AC22C00A8498A /* MessageViewController.swift */,
@@ -588,6 +599,7 @@
 			files = (
 				39D101651D7A0DE6000B61F0 /* Utility.swift in Sources */,
 				39737EAB1D777ABD00E70E5A /* LoginViewController.swift in Sources */,
+				39C1FABE1D9446AF00587281 /* SearchViewExtension.swift in Sources */,
 				39C1FAB51D94223A00587281 /* SearchViewCell.swift in Sources */,
 				39737EA91D777AAD00E70E5A /* SignupViewController.swift in Sources */,
 				39DC19E01D7A8FA700A8498A /* HomeViewExtension.swift in Sources */,
