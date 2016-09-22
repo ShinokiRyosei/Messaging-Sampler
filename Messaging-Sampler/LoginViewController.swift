@@ -36,6 +36,10 @@ class LoginViewController: UIViewController {
             Transition().toHomeViewTransition(on: self)
         }
     }
+    
+    @IBAction func back() {
+        self.dismiss(animated: true, completion: nil)
+    }
 }
 
 

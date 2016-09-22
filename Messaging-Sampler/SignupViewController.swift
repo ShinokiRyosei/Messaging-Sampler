@@ -37,10 +37,10 @@ class SignupViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if FIRAuth.auth()?.currentUser != nil && FIRAuth.auth()?.currentUser?.isEmailVerified == true {
-            print("user is already logged in")
-            Transition().toHomeViewTransition(on: self)
-        }
+//        if FIRAuth.auth()?.currentUser != nil && FIRAuth.auth()?.currentUser?.isEmailVerified == true {
+//            print("user is already logged in")
+//            Transition().toHomeViewTransition(on: self)
+//        }
     }
 
     override func didReceiveMemoryWarning() {

@@ -8,10 +8,13 @@
 
 import UIKit
 import Firebase
+import FirebaseDatabase
 
 class HomeViewController: UIViewController {
     
     @IBOutlet var homeTable: UITableView!
+    
+    let ref: FIRDatabaseReference = FIRDatabase.database().reference()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +33,7 @@ class HomeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func fetchUserList() {
-        
+    func fetchRoomList() {
+        ref.child("rooms").queryOrdered(byChild: "rooms")
     }
 }
