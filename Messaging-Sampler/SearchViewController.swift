@@ -15,8 +15,11 @@ class SearchViewController: UIViewController {
     
     @IBOutlet var table: UITableView!
     
+    fileprivate var searches: [Search] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.configureTable()
         self.configureSearchController()
     }
     
@@ -43,9 +46,24 @@ class SearchViewController: UIViewController {
     fileprivate func queryUserName(on key: String) {
         let ref: FIRDatabaseReference = FIRDatabase.database().reference().child("user")
         ref.queryOrdered(byChild: "username").queryEqual(toValue: key).observeSingleEvent(of: .value, with: { (snapShot) in
-            print(snapShot)
+            print("snapShot...\(snapShot)")
+            self.loadSearchResults(snapshot: snapShot)
         }) { (error) in
             print(error)
+        }
+    }
+    
+    private func loadSearchResults(snapshot: FIRDataSnapshot) {
+        defer {
+            self.table.reloadData()
+        }
+        if let children: [FIRDataSnapshot] = snapshot.children.allObjects as? [FIRDataSnapshot] {
+            self.searches.removeAll()
+            for child in children {
+                print(child)
+                let search: Search = Search(snapshot: child)
+                self.searches.append(search)
+            }
         }
     }
 }
@@ -63,11 +81,12 @@ extension SearchViewController: UITableViewDelegate {
 
 extension SearchViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return searches.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SearchCell", for: indexPath) as! SearchViewCell
+        cell.nameLabel.text = searches[indexPath.row].username
         return cell
     }
 }
