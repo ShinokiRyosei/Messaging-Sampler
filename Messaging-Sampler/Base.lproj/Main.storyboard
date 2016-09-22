@@ -265,7 +265,7 @@
         <!--Item-->
         <scene sceneID="q3F-o4-gOw">
             <objects>
-                <navigationController storyboardIdentifier="HomeView" automaticallyAdjustsScrollViewInsets="NO" id="maE-eQ-1CU" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="maE-eQ-1CU" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="LzP-B7-edi"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="JpO-qE-H0f">
@@ -284,7 +284,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="Wa5-bg-hhn">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="fit-OE-bxf" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="HomeView" automaticallyAdjustsScrollViewInsets="NO" id="fit-OE-bxf" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="sy1-ga-php">
                         <autoresizingMask key="autoresizingMask"/>
@@ -299,10 +299,10 @@
             </objects>
             <point key="canvasLocation" x="1052" y="1322.7886056971515"/>
         </scene>
-        <!--View Controller-->
+        <!--Search View Controller-->
         <scene sceneID="kIL-lH-CZd">
             <objects>
-                <viewController id="1Kh-VQ-EWF" sceneMemberID="viewController">
+                <viewController id="1Kh-VQ-EWF" customClass="SearchViewController" customModule="Messaging_Sampler" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hVN-xN-kMx"/>
                         <viewControllerLayoutGuide type="bottom" id="Io2-nf-EVi"/>
@@ -310,9 +310,23 @@
                     <view key="view" contentMode="scaleToFill" id="47c-pQ-SJX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gfE-Vw-LKF">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gfE-Vw-LKF" firstAttribute="leading" secondItem="47c-pQ-SJX" secondAttribute="leading" id="E09-xj-6BP"/>
+                            <constraint firstAttribute="trailing" secondItem="gfE-Vw-LKF" secondAttribute="trailing" id="Ugd-lf-JLh"/>
+                            <constraint firstItem="Io2-nf-EVi" firstAttribute="top" secondItem="gfE-Vw-LKF" secondAttribute="bottom" id="fu6-6N-ND5"/>
+                            <constraint firstItem="gfE-Vw-LKF" firstAttribute="top" secondItem="47c-pQ-SJX" secondAttribute="top" id="orC-zg-WjW"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="EzV-4G-2FF"/>
+                    <connections>
+                        <outlet property="table" destination="gfE-Vw-LKF" id="jjF-NB-B0Y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZBU-3f-DND" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

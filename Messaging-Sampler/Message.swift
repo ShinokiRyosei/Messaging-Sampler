@@ -10,5 +10,5 @@ import UIKit
 import FirebaseDatabase
 
 struct Message {
-    <#fields#>
+    
 }

@@ -158,6 +158,7 @@
 		39737E751D776F1100E70E5A /* Messaging-Sampler */ = {
 			isa = PBXGroup;
 			children = (
+				39C1FABA1D942BD500587281 /* Model */,
 				39DC19ED1D7AD35700A8498A /* Images */,
 				39D101681D7A142C000B61F0 /* Util */,
 				39DC19FB1D7ADFD700A8498A /* View */,
@@ -169,7 +170,6 @@
 				39737E7F1D776F1100E70E5A /* LaunchScreen.storyboard */,
 				39737EA41D77703D00E70E5A /* GoogleService-Info.plist */,
 				39737E821D776F1100E70E5A /* Info.plist */,
-				39C1FAB81D942B6300587281 /* Message.swift */,
 			);
 			path = "Messaging-Sampler";
 			sourceTree = "<group>";
@@ -208,6 +208,14 @@
 				39C1FAB41D94223A00587281 /* SearchViewCell.xib */,
 			);
 			name = SearchCell;
+			sourceTree = "<group>";
+		};
+		39C1FABA1D942BD500587281 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				39C1FAB81D942B6300587281 /* Message.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		39D101681D7A142C000B61F0 /* Util */ = {
