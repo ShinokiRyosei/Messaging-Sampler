@@ -21,10 +21,10 @@ class SignupViewController: UIViewController {
     @IBOutlet var usernameTextField: UITextField!
     
     fileprivate let segueName: String = "toLoginView"
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         emailTextField.delegate = self
         passwordTextField.delegate = self
@@ -42,17 +42,21 @@ class SignupViewController: UIViewController {
             Transition().toHomeViewTransition(on: self)
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     @IBAction func didSelectSignup() {
-        AuthUtility.signupWithEmail(email: emailTextField.text, password: passwordTextField.text, passwordAgain: passwordAgainTextField.text, username: usernameTextField.text) {
-            // MARK: the transition to log in view after sign up
-            
+        let usernameError: ((UIAlertAction) -> Void) = { _ in
+            self.usernameTextField.text = ""
+        }
+        AuthUtility.signupWithEmail(email: emailTextField.text, password: passwordTextField.text, passwordAgain: passwordAgainTextField.text, username: usernameTextField.text, successHandler: {
             Utility.segueTransition(from: self, segue: self.segueName, sender: nil)
+        }) {
+            // error handler: user name is not unique
+            Utility.presentAlert(on: self, title: "User name has already been used", message: "User name must be unique", numberOfActions: 1, actionTitles: ["OK"], actionStyles: [.default], actionHandlers: [usernameError])
         }
     }
     

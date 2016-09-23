@@ -19,6 +19,7 @@
 		39737EA91D777AAD00E70E5A /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39737EA81D777AAD00E70E5A /* SignupViewController.swift */; };
 		39737EAB1D777ABD00E70E5A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39737EAA1D777ABD00E70E5A /* LoginViewController.swift */; };
 		3978E7F91D7DCAFC001571C3 /* HomeViewTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3978E7F81D7DCAFC001571C3 /* HomeViewTransition.swift */; };
+		39B4D0B81D957B310066968E /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B4D0B71D957B310066968E /* SettingViewController.swift */; };
 		39C1FAB21D941D0600587281 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C1FAB11D941D0600587281 /* SearchViewController.swift */; };
 		39C1FAB51D94223A00587281 /* SearchViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C1FAB31D94223A00587281 /* SearchViewCell.swift */; };
 		39C1FAB61D94223A00587281 /* SearchViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39C1FAB41D94223A00587281 /* SearchViewCell.xib */; };
@@ -73,6 +74,7 @@
 		39737EA81D777AAD00E70E5A /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		39737EAA1D777ABD00E70E5A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3978E7F81D7DCAFC001571C3 /* HomeViewTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewTransition.swift; sourceTree = "<group>"; };
+		39B4D0B71D957B310066968E /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		39C1FAB11D941D0600587281 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		39C1FAB31D94223A00587281 /* SearchViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewCell.swift; sourceTree = "<group>"; };
 		39C1FAB41D94223A00587281 /* SearchViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchViewCell.xib; sourceTree = "<group>"; };
@@ -285,6 +287,7 @@
 				39737EAC1D777AC900E70E5A /* Auth */,
 				39DC19E11D7A8FAC00A8498A /* HomeView */,
 				39DC19E71D7AC22C00A8498A /* MessageViewController.swift */,
+				39B4D0B71D957B310066968E /* SettingViewController.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -602,6 +605,7 @@
 				39C1FABE1D9446AF00587281 /* SearchViewExtension.swift in Sources */,
 				39C1FAB51D94223A00587281 /* SearchViewCell.swift in Sources */,
 				39737EA91D777AAD00E70E5A /* SignupViewController.swift in Sources */,
+				39B4D0B81D957B310066968E /* SettingViewController.swift in Sources */,
 				39DC19E01D7A8FA700A8498A /* HomeViewExtension.swift in Sources */,
 				39DC19E81D7AC22C00A8498A /* MessageViewController.swift in Sources */,
 				39737E791D776F1100E70E5A /* ViewController.swift in Sources */,

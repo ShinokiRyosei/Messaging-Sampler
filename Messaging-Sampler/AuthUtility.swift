@@ -12,27 +12,39 @@ import FirebaseDatabase
 
 class AuthUtility: NSObject {
     
-    class func signupWithEmail(email emailText: String?, password passwordText: String?, passwordAgain passwordAgainText: String?, username: String?,handler: @escaping  () -> Void) {
+    static let defaults: UserDefaults = UserDefaults.standard
+    
+    class func signupWithEmail(email emailText: String?, password passwordText: String?, passwordAgain passwordAgainText: String?, username: String?, successHandler: @escaping  () -> Void, usernameErrorHandler: @escaping () -> Void) {
         guard let email: String = emailText else { return }
         guard let password: String = passwordText else { return }
         guard let passwordAgain: String = passwordAgainText else { return }
         guard let name: String = username else { return }
+        let ref = FIRDatabase.database().reference()
         if password == passwordAgain {
-            FIRAuth.auth()!.createUser(withEmail: email, password: password, completion: { (user, error) in
-                if error != nil {
-                    print("create user error...\(error?.localizedDescription)")
-                }else {
-                    user?.sendEmailVerification(completion: { (err) in
-                        if err != nil {
-                            print("email verify error...\(err?.localizedDescription)")
+            ref.child("user").queryOrdered(byChild: "username").queryEqual(toValue: name).observeSingleEvent(of: .value, with: { (snapshot) in
+                print(snapshot)
+                if snapshot.hasChildren() {
+                    print("username is not unique")
+                    usernameErrorHandler()
+                }else { // snapshot does not exit
+                    FIRAuth.auth()!.createUser(withEmail: email, password: password, completion: { (user, error) in
+                        if error != nil {
+                            print("create user error...\(error?.localizedDescription)")
                         }else {
-                            let defaults: UserDefaults = UserDefaults.standard
-                            defaults.set((FIRAuth.auth()?.currentUser?.uid)!, forKey: "uid")
-                            FIRDatabase.database().reference().child("user").child((FIRAuth.auth()?.currentUser?.uid)!).setValue(["username": name, "id": (FIRAuth.auth()?.currentUser?.uid)!])
-                            handler()
+                            user?.sendEmailVerification(completion: { (err) in
+                                if err != nil {
+                                    print("email verify error...\(err?.localizedDescription)")
+                                }else {
+                                    let uid = (FIRAuth.auth()?.currentUser?.uid)!
+                                    defaults.set((FIRAuth.auth()?.currentUser?.uid)!, forKey: "uid")
+                                    ref.child("user").child((FIRAuth.auth()?.currentUser?.uid)!).setValue(["username": name, "id": uid])
+                                    ref.child("username").setValue([name: uid])
+                                    successHandler()
+                                }
+                            })
+                            
                         }
                     })
-                    
                 }
             })
         }
@@ -47,6 +59,7 @@ class AuthUtility: NSObject {
                 print(error?.localizedDescription)
             }else {
                 if user?.isEmailVerified == true {
+                    
                     handler()
                 }else {
                     Utility.presentAlert(on: target, title: "Email is not Verified", message: "Please Verify your email.", numberOfActions: 1, actionTitles: ["OK"], actionStyles: [.default], actionHandlers: [nil])
