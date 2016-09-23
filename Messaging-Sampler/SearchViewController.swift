@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import FirebaseDatabase
+import Firebase
 
 class SearchViewController: UIViewController {
     
@@ -65,6 +65,18 @@ class SearchViewController: UIViewController {
                 self.searches.append(search)
             }
         }
+    }
+    
+    func createRoom(search: Search)  {
+        let ref = FIRDatabase.database().reference()
+        let defaults = UserDefaults.standard
+        let uid = defaults.object(forKey: "uid") as! String
+        ref.child("user").queryOrderedByPriority().queryEqual(toValue: uid).observeSingleEvent(of: .value, with: { (snapshot) in
+            print("exits...\(snapshot.exists())")
+        })
+//        ref.child("room").childByAutoId().setValue(["user1": search.id, "user2": defaults.object(forKey: "uid") as! String])
+        // TODO トークルームが存在するかの確認
+        // TODO トークルームを作成した段階で、トークルームへの遷移
     }
 }
 

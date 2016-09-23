@@ -28,6 +28,10 @@ extension SearchViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SearchCell", for: indexPath) as! SearchViewCell
         cell.nameLabel.text = searches[indexPath.row].username
+        cell.tabAction = { (cell) in
+            let target: Search = self.searches[tableView.indexPath(for: cell)!.row]
+            self.createRoom(search: target)
+        }
         return cell
     }
 }
