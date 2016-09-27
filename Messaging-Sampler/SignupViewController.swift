@@ -24,8 +24,6 @@ class SignupViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
         emailTextField.delegate = self
         passwordTextField.delegate = self
         passwordAgainTextField.delegate = self
@@ -41,11 +39,6 @@ class SignupViewController: UIViewController {
             print("user is already logged in")
             Transition().toHomeViewTransition(on: self)
         }
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func didSelectSignup() {
