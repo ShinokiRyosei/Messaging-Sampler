@@ -26,6 +26,7 @@
 		39C1FAB91D942B6300587281 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C1FAB81D942B6300587281 /* Message.swift */; };
 		39C1FABC1D94356200587281 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C1FABB1D94356200587281 /* Search.swift */; };
 		39C1FABE1D9446AF00587281 /* SearchViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C1FABD1D9446AF00587281 /* SearchViewExtension.swift */; };
+		39C3B05D1D97529D008781EC /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C3B05C1D97529D008781EC /* UIColorExtension.swift */; };
 		39D101651D7A0DE6000B61F0 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D101641D7A0DE6000B61F0 /* Utility.swift */; };
 		39D101671D7A1094000B61F0 /* AuthUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D101661D7A1094000B61F0 /* AuthUtility.swift */; };
 		39D1016A1D7A1D1A000B61F0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D101691D7A1D1A000B61F0 /* HomeViewController.swift */; };
@@ -81,6 +82,7 @@
 		39C1FAB81D942B6300587281 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		39C1FABB1D94356200587281 /* Search.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		39C1FABD1D9446AF00587281 /* SearchViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewExtension.swift; sourceTree = "<group>"; };
+		39C3B05C1D97529D008781EC /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		39D101641D7A0DE6000B61F0 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		39D101661D7A1094000B61F0 /* AuthUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthUtility.swift; sourceTree = "<group>"; };
 		39D101691D7A1D1A000B61F0 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 				39737E7F1D776F1100E70E5A /* LaunchScreen.storyboard */,
 				39737EA41D77703D00E70E5A /* GoogleService-Info.plist */,
 				39737E821D776F1100E70E5A /* Info.plist */,
+				39C3B05C1D97529D008781EC /* UIColorExtension.swift */,
 			);
 			path = "Messaging-Sampler";
 			sourceTree = "<group>";
@@ -605,6 +608,7 @@
 				39C1FABE1D9446AF00587281 /* SearchViewExtension.swift in Sources */,
 				39C1FAB51D94223A00587281 /* SearchViewCell.swift in Sources */,
 				39737EA91D777AAD00E70E5A /* SignupViewController.swift in Sources */,
+				39C3B05D1D97529D008781EC /* UIColorExtension.swift in Sources */,
 				39B4D0B81D957B310066968E /* SettingViewController.swift in Sources */,
 				39DC19E01D7A8FA700A8498A /* HomeViewExtension.swift in Sources */,
 				39DC19E81D7AC22C00A8498A /* MessageViewController.swift in Sources */,

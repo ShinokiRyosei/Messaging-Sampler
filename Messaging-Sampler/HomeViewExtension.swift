@@ -9,8 +9,8 @@
 import UIKit
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
-    @available(iOS 2.0, *)
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3
     }
 

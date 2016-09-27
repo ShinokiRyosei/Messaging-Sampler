@@ -45,7 +45,7 @@ class SearchViewController: UIViewController {
     
     func queryUserName(on key: String) {
         let ref: FIRDatabaseReference = FIRDatabase.database().reference().child("user")
-        ref.queryOrdered(byChild: "username").queryEqual(toValue: key).observeSingleEvent(of: .value, with: { (snapShot) in
+        ref.queryOrdered(byChild: "username").queryEqual(toValue: "\(key)\u{f8ff}").observeSingleEvent(of: .value, with: { (snapShot) in
             print("snapShot...\(snapShot)")
             self.loadSearchResults(snapshot: snapShot)
         }) { (error) in
@@ -68,12 +68,18 @@ class SearchViewController: UIViewController {
     }
     
     func createRoom(search: Search)  {
-        let ref = FIRDatabase.database().reference()
+        let ref = FIRDatabase.database().reference().child("room")
         let defaults = UserDefaults.standard
         let uid = defaults.object(forKey: "uid") as! String
-        ref.child("user").queryOrderedByPriority().queryEqual(toValue: uid).observeSingleEvent(of: .value, with: { (snapshot) in
-            print("exits...\(snapshot.exists())")
-        })
+        ref.queryOrdered(byChild: uid).queryEqual(toValue: true).observeSingleEvent(of: .value, with: { (snapshot) in
+            if snapshot.exists() {
+                print("snapshot exits")
+            }else {
+                ref.childByAutoId().setValue(["title": "Talk", "messages": [uid: true, search.id: true]])
+            }
+            }) { (err) in
+                print(err)
+        }
 //        ref.child("room").childByAutoId().setValue(["user1": search.id, "user2": defaults.object(forKey: "uid") as! String])
         // TODO トークルームが存在するかの確認
         // TODO トークルームを作成した段階で、トークルームへの遷移

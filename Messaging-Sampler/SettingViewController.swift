@@ -19,6 +19,8 @@ class SettingViewController: UIViewController {
     @IBAction func didSelectLogout(sender: UIButton) {
         do {
             try FIRAuth.auth()?.signOut()
+            let loginView = self.storyboard?.instantiateViewController(withIdentifier: "LoginView") as! UINavigationController
+            self.present(loginView, animated: true, completion: nil)
         }catch let error as FIRAuthErrorCode {
             print(error)
         }catch let err {
