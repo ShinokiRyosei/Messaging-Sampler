@@ -46,9 +46,11 @@ class SignupViewController: UIViewController {
             self.usernameTextField.text = ""
         }
         AuthUtility.signupWithEmail(email: emailTextField.text, password: passwordTextField.text, passwordAgain: passwordAgainTextField.text, username: usernameTextField.text, successHandler: {
+            print("sign up successful!!")
             Utility.segueTransition(from: self, segue: self.segueName, sender: nil)
         }) {
             // error handler: user name is not unique
+            print("sign up failed!!")
             Utility.presentAlert(on: self, title: "User name has already been used", message: "User name must be unique", numberOfActions: 1, actionTitles: ["OK"], actionStyles: [.default], actionHandlers: [usernameError])
         }
     }
