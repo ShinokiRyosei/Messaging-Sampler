@@ -8,7 +8,9 @@
 
 import UIKit
 import Firebase
-import FirebaseDatabase
+import Rainbow
+
+var usernameResultType: UsernameResultType = .exist
 
 class SignupViewController: UIViewController {
     
@@ -22,12 +24,17 @@ class SignupViewController: UIViewController {
     
     fileprivate let segueName: String = "toLoginView"
     
+    private var delegate: UsernameTextFieldDelegate!
+    
+    private let notificationCenter: NotificationCenter = NotificationCenter.default
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         emailTextField.delegate = self
         passwordTextField.delegate = self
         passwordAgainTextField.delegate = self
-        usernameTextField.delegate = self
+        delegate = UsernameTextFieldDelegate()
+        usernameTextField.delegate = delegate
         
         passwordTextField.isSecureTextEntry = true
         passwordAgainTextField.isSecureTextEntry = true
@@ -39,20 +46,32 @@ class SignupViewController: UIViewController {
             print("user is already logged in")
             Transition().toHomeViewTransition(on: self)
         }
+        
+        notificationCenter.addObserver(self, selector: #selector(SignupViewController.changeUsernameLabel(notification:)), name: .usernameNotificationKey, object: nil)
+    }
+    
+    func changeUsernameLabel(notification: NotificationCenter) {
+        print("catch notification".red)
     }
     
     @IBAction func didSelectSignup() {
-        let usernameError: ((UIAlertAction) -> Void) = { _ in
-            self.usernameTextField.text = ""
+        if usernameResultType == .none {
+            print("signed up!!!".green)
+            AuthUtility.signupWithEmail(email: emailTextField.text, password: passwordTextField.text, passwordAgain: passwordAgainTextField.text, username: usernameTextField.text, successHandler: {
+                print("sign up successful!!".onCyan)
+                Utility.segueTransition(from: self, segue: self.segueName, sender: nil)
+            }) {
+                // error handler: user name is not unique
+                print("sign up failed!!".onGreen)
+                let usernameError: ((UIAlertAction) -> Void) = { _ in
+                    self.usernameTextField.text = ""
+                }
+                Utility.presentAlert(on: self, title: "User name has already been used", message: "User name must be unique", numberOfActions: 1, actionTitles: ["OK"], actionStyles: [.default], actionHandlers: [usernameError])
+            }
+        }else if usernameResultType == .exist {
+            
         }
-        AuthUtility.signupWithEmail(email: emailTextField.text, password: passwordTextField.text, passwordAgain: passwordAgainTextField.text, username: usernameTextField.text, successHandler: {
-            print("sign up successful!!")
-            Utility.segueTransition(from: self, segue: self.segueName, sender: nil)
-        }) {
-            // error handler: user name is not unique
-            print("sign up failed!!")
-            Utility.presentAlert(on: self, title: "User name has already been used", message: "User name must be unique", numberOfActions: 1, actionTitles: ["OK"], actionStyles: [.default], actionHandlers: [usernameError])
-        }
+
     }
     
     @IBAction func didSelectToLogin() {

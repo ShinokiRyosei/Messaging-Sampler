@@ -19,6 +19,8 @@
 		39737EA91D777AAD00E70E5A /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39737EA81D777AAD00E70E5A /* SignupViewController.swift */; };
 		39737EAB1D777ABD00E70E5A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39737EAA1D777ABD00E70E5A /* LoginViewController.swift */; };
 		3978E7F91D7DCAFC001571C3 /* HomeViewTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3978E7F81D7DCAFC001571C3 /* HomeViewTransition.swift */; };
+		3986AAAC1D9A5E0A008D2BD4 /* Rainbow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3986AAAB1D9A5E0A008D2BD4 /* Rainbow.framework */; };
+		3986AAAD1D9A5E0A008D2BD4 /* Rainbow.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3986AAAB1D9A5E0A008D2BD4 /* Rainbow.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		39B4D0B81D957B310066968E /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B4D0B71D957B310066968E /* SettingViewController.swift */; };
 		39C1FAB21D941D0600587281 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C1FAB11D941D0600587281 /* SearchViewController.swift */; };
 		39C1FAB51D94223A00587281 /* SearchViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C1FAB31D94223A00587281 /* SearchViewCell.swift */; };
@@ -36,6 +38,7 @@
 		39DC19E81D7AC22C00A8498A /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DC19E71D7AC22C00A8498A /* MessageViewController.swift */; };
 		39DC19EB1D7AD35200A8498A /* avatar-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 39DC19E91D7AD35200A8498A /* avatar-1.png */; };
 		39DC19EC1D7AD35200A8498A /* avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 39DC19EA1D7AD35200A8498A /* avatar.png */; };
+		39EB0CEA1D9CFD4E0081BC32 /* UsernameTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39EB0CE91D9CFD4E0081BC32 /* UsernameTextFieldDelegate.swift */; };
 		73AF2BFD686DCAC8973C55C2 /* Pods_Messaging_Sampler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8402D45F97B3F16007CC3186 /* Pods_Messaging_Sampler.framework */; };
 		C0B6AFBE541AAD98871676E0 /* Pods_Messaging_SamplerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 945309341BBFE42F658BA368 /* Pods_Messaging_SamplerTests.framework */; };
 /* End PBXBuildFile section */
@@ -57,6 +60,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		3986AAAE1D9A5E0A008D2BD4 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3986AAAD1D9A5E0A008D2BD4 /* Rainbow.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		39737E731D776F1100E70E5A /* Messaging-Sampler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Messaging-Sampler.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		39737E761D776F1100E70E5A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +92,7 @@
 		39737EA81D777AAD00E70E5A /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		39737EAA1D777ABD00E70E5A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3978E7F81D7DCAFC001571C3 /* HomeViewTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewTransition.swift; sourceTree = "<group>"; };
+		3986AAAB1D9A5E0A008D2BD4 /* Rainbow.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Rainbow.framework; path = Carthage/Build/iOS/Rainbow.framework; sourceTree = "<group>"; };
 		39B4D0B71D957B310066968E /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		39C1FAB11D941D0600587281 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		39C1FAB31D94223A00587281 /* SearchViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewCell.swift; sourceTree = "<group>"; };
@@ -92,6 +110,7 @@
 		39DC19E71D7AC22C00A8498A /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		39DC19E91D7AD35200A8498A /* avatar-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "avatar-1.png"; sourceTree = "<group>"; };
 		39DC19EA1D7AD35200A8498A /* avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar.png; sourceTree = "<group>"; };
+		39EB0CE91D9CFD4E0081BC32 /* UsernameTextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsernameTextFieldDelegate.swift; sourceTree = "<group>"; };
 		3CCDE134484575445B3A4419 /* Pods-Messaging-SamplerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Messaging-SamplerUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Messaging-SamplerUITests/Pods-Messaging-SamplerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		3D6426E30950FBDBC1A60290 /* Pods-Messaging-Sampler.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Messaging-Sampler.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Messaging-Sampler/Pods-Messaging-Sampler.debug.xcconfig"; sourceTree = "<group>"; };
 		46AF36D1CDCECDEEF33BDEB5 /* Pods-Messaging-SamplerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Messaging-SamplerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Messaging-SamplerUITests/Pods-Messaging-SamplerUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -109,6 +128,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				73AF2BFD686DCAC8973C55C2 /* Pods_Messaging_Sampler.framework in Frameworks */,
+				3986AAAC1D9A5E0A008D2BD4 /* Rainbow.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,6 +164,7 @@
 		39737E6A1D776F1100E70E5A = {
 			isa = PBXGroup;
 			children = (
+				3986AAAB1D9A5E0A008D2BD4 /* Rainbow.framework */,
 				39737E751D776F1100E70E5A /* Messaging-Sampler */,
 				39737E8A1D776F1100E70E5A /* Messaging-SamplerTests */,
 				39737E951D776F1100E70E5A /* Messaging-SamplerUITests */,
@@ -206,6 +227,7 @@
 			children = (
 				39737EA81D777AAD00E70E5A /* SignupViewController.swift */,
 				39737EAA1D777ABD00E70E5A /* LoginViewController.swift */,
+				39EB0CE91D9CFD4E0081BC32 /* UsernameTextFieldDelegate.swift */,
 			);
 			name = Auth;
 			sourceTree = "<group>";
@@ -321,6 +343,7 @@
 				39737E711D776F1100E70E5A /* Resources */,
 				8A930CD5FE0D6C4907F47043 /* [CP] Embed Pods Frameworks */,
 				9E8454DA3D5D34EE86D254FE /* [CP] Copy Pods Resources */,
+				3986AAAE1D9A5E0A008D2BD4 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -609,6 +632,7 @@
 				39C1FAB51D94223A00587281 /* SearchViewCell.swift in Sources */,
 				39737EA91D777AAD00E70E5A /* SignupViewController.swift in Sources */,
 				39C3B05D1D97529D008781EC /* UIColorExtension.swift in Sources */,
+				39EB0CEA1D9CFD4E0081BC32 /* UsernameTextFieldDelegate.swift in Sources */,
 				39B4D0B81D957B310066968E /* SettingViewController.swift in Sources */,
 				39DC19E01D7A8FA700A8498A /* HomeViewExtension.swift in Sources */,
 				39DC19E81D7AC22C00A8498A /* MessageViewController.swift in Sources */,
@@ -769,6 +793,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "Messaging-Sampler/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "tv.shinoki.Messaging-Sampler";
@@ -783,6 +811,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "Messaging-Sampler/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "tv.shinoki.Messaging-Sampler";
