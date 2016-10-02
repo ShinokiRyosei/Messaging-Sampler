@@ -13,13 +13,22 @@ import Firebase
 enum UsernameResultType {
     case none
     case exist
+    
+    func usernameExistsOrNot() -> Bool {
+        switch self {
+        case .exist:
+            return true
+        case .none:
+            return false
+        }
+    }
 }
-
-
 
 class UsernameTextFieldDelegate: NSObject, UITextFieldDelegate {
     
     let notificationCenter: NotificationCenter = NotificationCenter.default
+    
+    var usernameResultType: UsernameResultType = .none
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         self.validateUsername(equalTo: textField.text)
@@ -32,18 +41,21 @@ class UsernameTextFieldDelegate: NSObject, UITextFieldDelegate {
     }
     
     private func validateUsername(equalTo string: String?) {
-        self.notificationCenter.post(name: .usernameNotificationKey, object: nil)
-//        let ref = FIRDatabase.database().reference()
-//        ref.child("user").queryOrdered(byChild: "username").queryEqual(toValue: string).observeSingleEvent(of: .value, with: { (snapshot) in
-//            if snapshot.hasChildren() {
-//                usernameResultType = .exist
-//
-//            }else {
-//                usernameResultType = .none
-//            }
-//        }) { (error) in
-//            print(error)
-//        }
+        
+        
+        let ref = FIRDatabase.database().reference()
+        ref.child("user").queryOrdered(byChild: "username").queryEqual(toValue: string).observeSingleEvent(of: .value, with: { (snapshot) in
+            if snapshot.hasChildren() {
+                self.usernameResultType = .exist
+                self.notificationCenter.post(name: .usernameNotificationKey, object: nil, userInfo: ["usernameResultType": self.usernameResultType])
+                
+            }else {
+                self.usernameResultType = .none
+                self.notificationCenter.post(name: .usernameNotificationKey, object: nil, userInfo: ["usernameResultType": self.usernameResultType])
+            }
+        }) { (error) in
+            print(error)
+        }
     }
 }
 
