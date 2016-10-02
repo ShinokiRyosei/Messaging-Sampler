@@ -7,46 +7,43 @@
 //
 
 import UIKit
-import FirebaseAuth
-import FirebaseDatabase
+import Firebase
+import Rainbow
 
 class AuthUtility: NSObject {
     
     static let defaults: UserDefaults = UserDefaults.standard
     
-    class func signupWithEmail(email emailText: String?, password passwordText: String?, passwordAgain passwordAgainText: String?, username: String?, successHandler: @escaping  () -> Void, usernameErrorHandler: @escaping () -> Void) {
+    class func signupWithEmail(email emailText: String?, password passwordText: String?, passwordAgain passwordAgainText: String?, username: String?, successHandler: @escaping  () -> Void) {
+        print("check optional".red)
         guard let email: String = emailText else { return }
         guard let password: String = passwordText else { return }
         guard let passwordAgain: String = passwordAgainText else { return }
         guard let name: String = username else { return }
-        let ref = FIRDatabase.database().reference()
+        print("optional has been checked".red)
         if password == passwordAgain {
-            ref.child("user").queryOrdered(byChild: "username").queryEqual(toValue: name).observeSingleEvent(of: .value, with: { (snapshot) in
-                print(snapshot)
-                if snapshot.hasChildren() {
-                    print("username is not unique")
-                    usernameErrorHandler()
-                }else { // snapshot does not exit
-                    FIRAuth.auth()!.createUser(withEmail: email, password: password, completion: { (user, error) in
-                        if error != nil {
-                            print("create user error...\(error?.localizedDescription)")
+            print("passwordes are equal")
+            
+            FIRAuth.auth()!.createUser(withEmail: email, password: password, completion: { (user, error) in
+                if error != nil {
+                    print("create user error...\(error?.localizedDescription)")
+                }else {
+                    user?.sendEmailVerification(completion: { (err) in
+                        if err != nil {
+                            print("email verify error...\(err?.localizedDescription)")
                         }else {
-                            user?.sendEmailVerification(completion: { (err) in
-                                if err != nil {
-                                    print("email verify error...\(err?.localizedDescription)")
-                                }else {
-                                    let uid = (FIRAuth.auth()?.currentUser?.uid)!
-                                    defaults.set((FIRAuth.auth()?.currentUser?.uid)!, forKey: "uid")
-                                    ref.child("user").child((FIRAuth.auth()?.currentUser?.uid)!).setValue(["username": name, "id": uid])
-                                    ref.child("username").setValue([name: uid])
-                                    successHandler()
-                                }
-                            })
-                            
+                            self.createUsername(username: name)
+                            defaults.set((FIRAuth.auth()?.currentUser?.uid)!, forKey: "uid")
+                            successHandler()
                         }
                     })
+                    
                 }
             })
+            
+            
+        }else { // passwordes does not match
+            print("password does not match".onGreen)
         }
     }
     
@@ -67,5 +64,13 @@ class AuthUtility: NSObject {
                 
             }
         })
+    }
+    
+    class func createUsername(username name: String?) {
+        guard let username: String = name else {
+            return
+        }
+        let ref = FIRDatabase.database().reference()
+        ref.child("user").childByAutoId().setValue(["username": username, "id": (FIRAuth.auth()?.currentUser?.uid)!])
     }
 }

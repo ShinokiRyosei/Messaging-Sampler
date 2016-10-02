@@ -15,6 +15,8 @@ class HomeViewController: UIViewController {
     @IBOutlet var homeTable: UITableView!
     
     let ref: FIRDatabaseReference = FIRDatabase.database().reference()
+    
+    let defaults: UserDefaults = UserDefaults.standard
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +36,13 @@ class HomeViewController: UIViewController {
     }
     
     func fetchRoomList() {
-        ref.child("rooms").queryOrdered(byChild: "rooms")
+        let username: String = defaults.object(forKey: "username") as! String
+        ref.child("rooms").queryOrdered(byChild: username).queryEqual(toValue: true).observe(.value, with: { (snapshot) in
+            if snapshot.hasChildren() {
+                
+            }
+            }) { (err) in
+                print(err)
+        }
     }
 }

@@ -65,6 +65,9 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ICf-mM-abV">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="79" id="QuK-D4-szt"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -74,13 +77,20 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yog-AC-Eo1">
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="leadingMargin" secondItem="zeU-oP-9LY" secondAttribute="leading" id="01o-yK-6VO"/>
                             <constraint firstAttribute="trailingMargin" secondItem="7pg-zV-ejR" secondAttribute="trailing" id="1XA-UI-v3q"/>
                             <constraint firstItem="a9k-ks-kEs" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="4mR-vb-v4P"/>
+                            <constraint firstItem="yog-AC-Eo1" firstAttribute="centerY" secondItem="ICf-mM-abV" secondAttribute="centerY" id="88i-ZK-bcT"/>
                             <constraint firstAttribute="leadingMargin" secondItem="AJH-D1-Nw3" secondAttribute="leading" id="AEX-tU-kuV"/>
+                            <constraint firstItem="yog-AC-Eo1" firstAttribute="leading" secondItem="ICf-mM-abV" secondAttribute="trailing" constant="8" id="B44-YO-PoV"/>
                             <constraint firstAttribute="leadingMargin" secondItem="Y1x-i5-c9T" secondAttribute="leading" id="DBM-LJ-P4Q"/>
                             <constraint firstAttribute="trailingMargin" secondItem="zeU-oP-9LY" secondAttribute="trailing" id="HcM-9r-dJE"/>
                             <constraint firstAttribute="trailingMargin" secondItem="RW4-Ei-Cka" secondAttribute="trailing" id="L6v-1c-ap5"/>
@@ -97,6 +107,7 @@
                             <constraint firstAttribute="leadingMargin" secondItem="ICf-mM-abV" secondAttribute="leading" id="gWh-ox-QoU"/>
                             <constraint firstItem="Y1x-i5-c9T" firstAttribute="top" secondItem="RW4-Ei-Cka" secondAttribute="bottom" constant="8" id="hd2-sm-86U"/>
                             <constraint firstItem="AJH-D1-Nw3" firstAttribute="top" secondItem="Y1x-i5-c9T" secondAttribute="bottom" constant="8" id="oRd-OH-Puo"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yog-AC-Eo1" secondAttribute="trailing" id="pav-xB-ZBF"/>
                             <constraint firstItem="xOE-tQ-qeg" firstAttribute="top" secondItem="7ol-bT-Tgf" secondAttribute="bottom" constant="8" id="pgF-l7-dvg"/>
                             <constraint firstItem="7ol-bT-Tgf" firstAttribute="top" secondItem="zeU-oP-9LY" secondAttribute="bottom" constant="8.5" id="pm4-kh-e7h"/>
                             <constraint firstItem="7ol-bT-Tgf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tzZ-Mj-XY9"/>
@@ -108,6 +119,7 @@
                         <outlet property="emailTextField" destination="RW4-Ei-Cka" id="i3b-UW-9O0"/>
                         <outlet property="passwordAgainTextField" destination="7pg-zV-ejR" id="0Fi-bC-HuD"/>
                         <outlet property="passwordTextField" destination="AJH-D1-Nw3" id="sZc-TY-kjy"/>
+                        <outlet property="usernameNotificationLabel" destination="yog-AC-Eo1" id="gIZ-Bl-qLh"/>
                         <outlet property="usernameTextField" destination="zeU-oP-9LY" id="GVJ-B6-bDD"/>
                         <segue destination="frS-dg-8V6" kind="show" identifier="toLoginView" id="22r-Gl-6E7"/>
                     </connections>

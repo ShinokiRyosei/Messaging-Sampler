@@ -32,13 +32,6 @@ class MessageViewController: JSQMessagesViewController {
         self.outgoingAvatar = JSQMessagesAvatarImageFactory.avatarImage(with: UIImage(named: "avatar-1"), diameter: 64)
         
         self.messages = []
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     override func didPressSend(_ button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: Date!) {
