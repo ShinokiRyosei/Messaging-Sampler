@@ -8,7 +8,7 @@
 
 import UIKit
 import Firebase
-import FirebaseDatabase
+import JEToolkit
 
 class HomeViewController: UIViewController {
     
@@ -18,7 +18,7 @@ class HomeViewController: UIViewController {
             
             homeTable.delegate = self
             homeTable.dataSource = self
-            homeTable.register(UINib(nibName: "HomeViewCell", bundle: nil), forCellReuseIdentifier: "HomeCell")
+            homeTable.registerCellClass(HomeTableCell.self)
         }
     }
     
