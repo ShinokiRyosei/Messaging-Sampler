@@ -32,6 +32,7 @@ class HomeViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
         super.viewWillAppear(animated)
     }
     
@@ -44,5 +45,28 @@ class HomeViewController: UIViewController {
             }) { (err) in
                 print(err)
         }
+    }
+}
+
+extension HomeViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell: HomeViewCell = tableView.dequeueReusableCell(with: HomeViewCell.self, for: indexPath) as? HomeViewCell else {
+            
+            return UITableViewCell()
+        }
+        return cell
+    }
+}
+
+extension HomeViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        Utility.segueTransition(from: self, segue: "toMessageView", sender: nil)
     }
 }
