@@ -18,7 +18,7 @@ class HomeViewController: UIViewController {
             
             homeTable.delegate = self
             homeTable.dataSource = self
-            homeTable.registerCellClass(HomeTableCell.self)
+            homeTable.registerCellClass(HomeViewCell.self)
         }
     }
     
