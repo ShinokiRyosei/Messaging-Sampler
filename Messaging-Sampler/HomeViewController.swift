@@ -46,6 +46,11 @@ class HomeViewController: UIViewController {
                 print(err)
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        
+    }
 }
 
 extension HomeViewController: UITableViewDataSource {
