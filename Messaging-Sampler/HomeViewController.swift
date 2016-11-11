@@ -12,18 +12,23 @@ import FirebaseDatabase
 
 class HomeViewController: UIViewController {
     
-    @IBOutlet var homeTable: UITableView!
+    @IBOutlet var homeTable: UITableView! {
+        
+        didSet {
+            
+            homeTable.delegate = self
+            homeTable.dataSource = self
+            homeTable.register(UINib(nibName: "HomeViewCell", bundle: nil), forCellReuseIdentifier: "HomeCell")
+        }
+    }
     
     let ref: FIRDatabaseReference = FIRDatabase.database().reference()
     
     let defaults: UserDefaults = UserDefaults.standard
 
     override func viewDidLoad() {
-        super.viewDidLoad()
-        homeTable.delegate = self
-        homeTable.dataSource = self
         
-        homeTable.register(UINib(nibName: "HomeViewCell", bundle: nil), forCellReuseIdentifier: "HomeCell")
+        super.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
