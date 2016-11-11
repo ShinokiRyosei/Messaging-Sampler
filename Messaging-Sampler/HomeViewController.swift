@@ -22,9 +22,9 @@ class HomeViewController: UIViewController {
         }
     }
     
-    let ref: FIRDatabaseReference = FIRDatabase.database().reference()
-    
-    let defaults: UserDefaults = UserDefaults.standard
+    private let ref: FIRDatabaseReference = FIRDatabase.database().reference()
+    private let defaults: UserDefaults = UserDefaults.standard
+    fileprivate var rooms: [Room]?
 
     override func viewDidLoad() {
         
@@ -56,7 +56,8 @@ class HomeViewController: UIViewController {
 extension HomeViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        
+        return rooms?.count ?? 0
     }
     
     
