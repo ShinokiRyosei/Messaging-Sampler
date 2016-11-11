@@ -10,8 +10,16 @@ import UIKit
 
 class HomeViewCell: UITableViewCell {
     
-    @IBOutlet var iconImageView: UIImageView!
-    @IBOutlet var usernameLabel: UILabel!
+    internal var room: Room! {
+        
+        didSet {
+            
+            
+        }
+    }
+    
+    @IBOutlet private var iconImageView: UIImageView!
+    @IBOutlet private var usernameLabel: UILabel!
 
     override func awakeFromNib() {
         
