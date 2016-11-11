@@ -8,31 +8,31 @@
 
 import UIKit
 import Firebase
-import FirebaseDatabase
+import JEToolkit
 
 class HomeViewController: UIViewController {
     
-    @IBOutlet var homeTable: UITableView!
+    @IBOutlet var homeTable: UITableView! {
+        
+        didSet {
+            
+            homeTable.delegate = self
+            homeTable.dataSource = self
+            homeTable.registerCellClass(HomeViewCell.self)
+        }
+    }
     
     let ref: FIRDatabaseReference = FIRDatabase.database().reference()
     
     let defaults: UserDefaults = UserDefaults.standard
 
     override func viewDidLoad() {
-        super.viewDidLoad()
-        homeTable.delegate = self
-        homeTable.dataSource = self
         
-        homeTable.register(UINib(nibName: "HomeViewCell", bundle: nil), forCellReuseIdentifier: "HomeCell")
+        super.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func fetchRoomList() {

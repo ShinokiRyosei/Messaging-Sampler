@@ -8,19 +8,16 @@
 
 import UIKit
 import Firebase
-import Rainbow
 
 class AuthUtility: NSObject {
     
     static let defaults: UserDefaults = UserDefaults.standard
     
     class func signupWithEmail(email emailText: String?, password passwordText: String?, passwordAgain passwordAgainText: String?, username: String?, successHandler: @escaping  () -> Void) {
-        print("check optional".red)
         guard let email: String = emailText else { return }
         guard let password: String = passwordText else { return }
         guard let passwordAgain: String = passwordAgainText else { return }
         guard let name: String = username else { return }
-        print("optional has been checked".red)
         if password == passwordAgain {
             print("passwordes are equal")
             
@@ -43,7 +40,7 @@ class AuthUtility: NSObject {
             
             
         }else { // passwordes does not match
-            print("password does not match".onGreen)
+            print("password does not match")
         }
     }
     

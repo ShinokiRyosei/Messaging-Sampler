@@ -8,7 +8,6 @@
 
 import UIKit
 import Firebase
-import Rainbow
 
 
 
@@ -52,7 +51,6 @@ class SignupViewController: UIViewController {
     }
     
     func changeUsernameLabel(notification: Notification) {
-        print("catch notification".red)
         print(notification.userInfo?["usernameResultType"])
         usernameResultType = notification.userInfo?["usernameResultType"] as? UsernameResultType ?? .exist
         usernameNotificationLabel.text = {
@@ -68,17 +66,14 @@ class SignupViewController: UIViewController {
     
     @IBAction func didSelectSignup() {
         if !usernameResultType.usernameExistsOrNot() {
-            print("signed up!!!".green)
             let defaults: UserDefaults = UserDefaults.standard
             AuthUtility.signupWithEmail(email: emailTextField.text, password: passwordTextField.text, passwordAgain: passwordAgainTextField.text, username: usernameTextField.text, successHandler: {
-                print("sign up successful!!".onCyan)
                 defaults.set(self.usernameTextField.text, forKey: "username")
                 Utility.segueTransition(from: self, segue: self.segueName, sender: nil)
             })
             
         }else if usernameResultType.usernameExistsOrNot() {
             // error handler: user name is not unique
-            print("sign up failed!!".onGreen)
             let usernameError: ((UIAlertAction) -> Void) = { _ in
                 self.usernameTextField.text = ""
             }

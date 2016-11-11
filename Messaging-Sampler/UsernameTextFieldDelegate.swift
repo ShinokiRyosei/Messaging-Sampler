@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Rainbow
 import Firebase
 
 enum UsernameResultType {
